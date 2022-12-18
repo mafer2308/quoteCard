@@ -1,0 +1,55 @@
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+.App{
+  width: 100vw;
+  height: 100vh;
+}
+.button{
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  color: rgb(220, 220, 198);
+  font-size: 2rem;
+  font-weight: bold;
+  border: none;
+  }
+.overall-container{
+  width: 100vw;
+  height: 100vh;
+  padding: 10rem 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+}
+.card-container{
+  padding: 1.5rem;
+  align-items: center;
+  justify-content:center;
+  border-radius: 25px;
+  background: rgb(220, 220, 198);
+}
+.content-end{
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+.icon{
+  font-size: 5rem;
+}
+
+h3{
+  font-size: 1.3rem;
+
+}
+.text{
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.textA{
+  text-align: right;
+  padding: 1rem;
+}
