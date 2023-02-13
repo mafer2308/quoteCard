@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import './App.css'
+import IconRandon from './Components/IconRandon'
 import Quotebox from './Components/Quotebox'
 
 function App() {
@@ -9,6 +10,8 @@ function App() {
   return (
     <div className="App">
       <Quotebox/>
+      <IconRandon/>
+      
     </div>
   )
 }
