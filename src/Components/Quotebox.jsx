@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import quotes from "../Data/quotes.json";
+import "animate.css";
+
 
 const Quotebox = () => {
   const [color, setColor] = useState("");
   const [index, setIndex] = useState(0);
+  const [clicked, setClicked] = useState(false);
+  const [animate, setAnimate] = useState(false);
 
   const getRandomColor = () => {
     return Math.floor(Math.random() * 16777215).toString(16);
@@ -22,7 +26,7 @@ const Quotebox = () => {
 
   return (
     <div className="overall-container" style={{ background: `#${color}` }}>
-      <div className="card-container">
+      <div className={`card-container animate__animated ${animate ? 'animate__backInRight' : ''}`}>
         <section className="quote-container">
           <h1 className="icon" style={{ color: `#${color}` }}>
             "
@@ -33,9 +37,18 @@ const Quotebox = () => {
           <h3 className="textA" style={{ color: `#${color}` }}>{quotes[index].author}</h3>
         </section>
         <section className="content-end">
+
           <button
-            onClick={next}
-            className="button"
+            onClick={() => {
+              next();
+              setClicked(true);
+              setAnimate(true);
+              setTimeout(() => {
+                setClicked(false);
+                setAnimate(false);
+              }, 1000); // reestablece el estado a falso después de 1 segundo
+            }}
+            className={`button ${clicked ? "animate__animated animate__heartBeat" : ""}`}
             style={{ background: `#${color}` }}
           >
             {" "}
@@ -45,6 +58,8 @@ const Quotebox = () => {
       </div>
     </div>
   );
-};
+}  
 
 export default Quotebox;
+
+
